@@ -1,138 +1,239 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Desarrollo Web</title>
+
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <h1>Desarrollo Web</h1>
-    <h2>Proyecto académico para el aprendizaje de aplicaciones web</h2>
-    <h3>Desarrollado por Evelyn Lema </h3>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
 
-    <p>
-        Esta página ha sido creada como parte de la asignatura Desarrollo de Aplicaciones Web.
-        Su objetivo es demostrar el uso básico de HTML, Visual Studio Code y GitHub.
-    </p>
+            <a class="navbar-brand" href="#">
+                Desarrollo Web
+            </a>
 
-</body>
-</html>
-<header>
-    <h1>Desarrollo Web</h1>
-</header>
+            <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menu">
 
-<nav>
-    <ul>
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#quienes-somos">Quiénes Somos</a></li>
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-    </ul>
-</nav>
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-<main>
+            <div class="collapse navbar-collapse" id="menu">
 
-    <section id="inicio">
-        <h2>Proyecto académico para el aprendizaje de aplicaciones web</h2>
+                <ul class="navbar-nav ms-auto">
 
-        <h3>Desarrollado por Evelyn Lema</h3>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio">Inicio</a>
+                    </li>
 
-        <p>
-            Esta página ha sido creada como parte de la asignatura Desarrollo de Aplicaciones Web.
-            Su objetivo es demostrar el uso básico de HTML, Visual Studio Code y GitHub.
+                    <li class="nav-item">
+                        <a class="nav-link" href="#quienes-somos">Quiénes Somos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#servicios">Servicios</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">Contacto</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="hero text-center text-white p-5">
+
+        <h1>Desarrollo Web</h1>
+
+        <p class="lead">
+            Proyecto académico para el aprendizaje de aplicaciones web
         </p>
-    </section>
 
-        <section id="quienes-somos">
-            <h2>Quiénes Somos</h2>
+        <a href="#contacto" class="btn btn-warning">
+            Contáctanos
+        </a>  Tlf : 0982921823
 
-            <article>
-                <p>
-                    Este proyecto ha sido desarrollado con fines académicos dentro de la asignatura
-                    Desarrollo de Aplicaciones Web. Su propósito es aplicar los conocimientos básicos
-                    de HTML5 para crear sitios web organizados y funcionales. A través de este trabajo,
-                    se busca comprender la importancia de la estructura semántica, el uso adecuado de
-                    etiquetas y la integración de diferentes elementos multimedia. Además, este proyecto
-                    permite fortalecer habilidades relacionadas con el diseño de páginas web y la gestión
-                    de versiones mediante GitHub. El aprendizaje obtenido servirá como base para el
-                    desarrollo de aplicaciones web más complejas en futuras unidades de estudio.
-                </p>
-            </article>
+    </header>
 
-            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600"
-                alt="Desarrollo web" width="400">
+    <main class="container">
+
+        <!-- QUIENES SOMOS -->
+        <section id="quienes-somos" class="my-5">
+
+            <div class="row align-items-center">
+
+                <div class="col-md-6">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3"
+                        class="img-fluid rounded shadow"
+                        alt="Desarrollo Web">
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <h2>Quiénes Somos</h2>
+
+                    <p>
+                        Este proyecto académico tiene como finalidad demostrar el uso
+                        de HTML5, CSS3 y Bootstrap para la creación de sitios web
+                        modernos. A través de este trabajo se aplican conocimientos
+                        relacionados con la estructura semántica, diseño responsivo,
+                        componentes visuales y publicación de proyectos web utilizando
+                        GitHub y GitHub Pages. Además, permite desarrollar habilidades
+                        prácticas para la construcción de interfaces atractivas y
+                        funcionales adaptadas a diferentes dispositivos.
+                    </p>
+
+                </div>
+
+            </div>
+
         </section>
 
-        <section id="servicios">
-            <h2>Servicios o Productos</h2>
+        <!-- SERVICIOS -->
+        <section id="servicios" class="my-5">
 
-            <ul>
-                <li>Diseño básico de páginas web.</li>
-                <li>Organización de contenido mediante HTML5.</li>
-                <li>Creación de menús de navegación.</li>
-                <li>Integración de imágenes y videos.</li>
-                <li>Publicación de proyectos en GitHub.</li>
-            </ul>
+            <h2 class="text-center mb-4">
+                Servicios
+            </h2>
+
+            <div class="row">
+
+                <div class="col-md-4">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <h5>Diseño Web</h5>
+                            <p>Creación de sitios web modernos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <h5>HTML5</h5>
+                            <p>Estructuras semánticas organizadas.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <h5>Bootstrap</h5>
+                            <p>Diseños responsivos para cualquier dispositivo.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
         </section>
 
-        <section id="contacto">
-            <h2>Contacto</h2>
+        <!-- VIDEO -->
+        <section class="my-5 text-center">
 
-            <p><strong>Correo electrónico:</strong> en.lemap@uea.edu.ec</p>
-            <p><strong>Teléfono:</strong> 0982921823</p>
-            <p><strong>Dirección:</strong> Pillaro-Ecuador</p>
-
-            <h3>Redes Sociales</h3>
-
-            <p>
-                <a href="https://www.facebook.com/" target="_blank">Facebook</a>
-            </p>
-
-            <p>
-                <a href="https://www.instagram.com/" target="_blank">Instagram</a>
-            </p>
-
-            <p>
-                <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
-            </p>
-        </section>
-
-        <section>
             <h2>Video Informativo</h2>
 
             <iframe width="560" height="315"
                 src="https://www.youtube.com/embed/rfscVS0vtbw"
-                title="Video de Desarrollo Web"
-                frameborder="0"
+                title="Video Desarrollo Web"
                 allowfullscreen>
             </iframe>
+
+        </section>
+
+        <!-- CONTACTO -->
+        <section id="contacto" class="my-5">
+
+            <h2 class="text-center">
+                Contacto
+            </h2>
+
+            <form class="p-4 shadow rounded">
+
+                <div class="mb-3">
+                    <label>Nombre</label>
+                    <input type="text"
+                        class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label>Correo Electrónico</label>
+                    <input type="email"
+                        class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label>Asunto</label>
+                    <input type="text"
+                        class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label>Mensaje</label>
+                    <textarea
+                        class="form-control"
+                        rows="4"></textarea>
+                </div>
+
+                <button class="btn btn-primary">
+                    Enviar
+                </button>
+
+            </form>
+
         </section>
 
     </main>
 
-    <aside>
-        <h2>Información adicional</h2>
+    <!-- ASIDE -->
+    <aside class="container bg-light p-4 rounded shadow my-4">
+
+        <h3>Información adicional</h3>
 
         <p>
-            Horario de atención: lunes a viernes de 08:00 a 17:00.
+            Horario de atención:
+            Lunes a Viernes de 08:00 a 17:00.
         </p>
 
-        <p>
-            Este proyecto forma parte del Proyecto Integrador de la Unidad 1.
-        </p>
     </aside>
 
-    <footer>
-        <p>Desarrollado por Evelyn Lema</p>
-        <p>Asignatura: Desarrollo de Aplicaciones Web</p>
-        <p>Año: 2026</p>
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white text-center p-3">
+
+        <p>
+            Desarrollado por Evelyn Lema
+        </p>
+
+        <p>
+            Desarrollo de Aplicaciones Web - 2026
+        </p>
+
     </footer>
 
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+</body>
 </html>
 ```
-
-    
-</main>
