@@ -169,6 +169,53 @@
             <h2 class="text-center">
                 Contacto
             </h2>
+            
+<section id="registro" class="container my-5">
+
+    <h2 class="text-center">Registro de Servicios</h2>
+
+    <form id="formRegistro" class="shadow p-4 rounded">
+
+        <div class="mb-3">
+            <label>Nombre</label>
+            <input type="text" id="nombre" class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label>Descripción</label>
+            <textarea id="descripcion" class="form-control"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label>Categoría</label>
+
+            <select id="categoria" class="form-control">
+                <option value="">Seleccione...</option>
+                <option>Diseño Web</option>
+                <option>Programación</option>
+                <option>Base de Datos</option>
+            </select>
+        </div>
+
+        <button class="btn btn-success">
+            Registrar
+        </button>
+
+    </form>
+
+    <br>
+
+    <div id="mensaje"></div>
+
+    <h4>Total de registros:
+        <span id="total">0</span>
+    </h4>
+
+    <div id="lista"></div>
+
+</section>
+
+
 
             <form class="p-4 shadow rounded">
 
@@ -234,6 +281,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+    <script src="script.js"></script>
+
 </body>
 </html>
-```
+
