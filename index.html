@@ -179,11 +179,13 @@
         <div class="mb-3">
             <label>Nombre</label>
             <input type="text" id="nombre" class="form-control">
+            <small id="errorNombre" class="text-danger"></small>
         </div>
 
         <div class="mb-3">
             <label>Descripción</label>
             <textarea id="descripcion" class="form-control"></textarea>
+            <small id="errorDescripcion" class="text-danger"></small>
         </div>
 
         <div class="mb-3">
@@ -195,6 +197,9 @@
                 <option>Programación</option>
                 <option>Base de Datos</option>
             </select>
+
+            <small id="errorCategoria" class="text-danger"></small>
+            
         </div>
 
         <button class="btn btn-success">
