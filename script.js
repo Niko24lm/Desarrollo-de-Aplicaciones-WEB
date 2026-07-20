@@ -3,6 +3,8 @@ const lista = document.getElementById("lista");
 const mensaje = document.getElementById("mensaje");
 const total = document.getElementById("total");
 
+const servicios = [];
+
 let contador = 0;
 
 function validarNombre(){
@@ -88,7 +90,56 @@ function validarCategoria(){
     return true;
 
 }
+function mostrarServicios() {
 
+    lista.innerHTML = "";
+
+    if (servicios.length === 0) {
+
+        lista.innerHTML = `
+            <div class="alert alert-warning">
+                No existen registros.
+            </div>
+        `;
+
+        total.textContent = 0;
+
+        return;
+    }
+
+    servicios.forEach(function(servicio, index) {
+
+        const card = document.createElement("div");
+
+        card.className = "card p-3 my-3 shadow";
+
+        card.innerHTML = `
+            <h5>${servicio.nombre}</h5>
+            <p>${servicio.descripcion}</p>
+            <span class="badge bg-primary">${servicio.categoria}</span>
+
+            <br><br>
+
+            <button class="btn btn-danger eliminar">
+                Eliminar
+            </button>
+        `;
+
+        card.querySelector(".eliminar").addEventListener("click", function() {
+
+            servicios.splice(index, 1);
+
+            mostrarServicios();
+
+        });
+
+        lista.appendChild(card);
+
+    });
+
+    total.textContent = servicios.length;
+
+}
 formulario.addEventListener("submit", function(e) {
 
     e.preventDefault();
@@ -116,39 +167,15 @@ formulario.addEventListener("submit", function(e) {
     mensaje.innerHTML =
     "<div class='alert alert-success'>Registro agregado correctamente.</div>";
 
-    const card = document.createElement("div");
+   servicios.push({
+    nombre: nombre,
+    descripcion: descripcion,
+    categoria: categoria
+});
 
-    card.className = "card p-3 my-3 shadow";
+mostrarServicios();
 
-    card.innerHTML = `
-        <h5>${nombre}</h5>
-        <p>${descripcion}</p>
-        <span class="badge bg-primary">${categoria}</span>
-
-        <br><br>
-
-        <button class="btn btn-danger eliminar">
-            Eliminar
-        </button>
-    `;
-
-    lista.appendChild(card);
-
-    contador++;
-
-    total.textContent = contador;
-
-    card.querySelector(".eliminar").addEventListener("click", function() {
-
-        card.remove();
-
-        contador--;
-
-        total.textContent = contador;
-
-    });
-
-    formulario.reset();
+formulario.reset();
 
  document.getElementById("nombre").addEventListener("input", validarNombre);
 
@@ -157,3 +184,4 @@ document.getElementById("descripcion").addEventListener("input", validarDescripc
 document.getElementById("categoria").addEventListener("change", validarCategoria);
 
 });
+mostrarServicios();
