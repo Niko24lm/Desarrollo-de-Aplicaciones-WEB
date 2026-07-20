@@ -176,22 +176,22 @@ html
 
     <h2 class="text-center">Registro de Servicios</h2>
 
-    <form id="formRegistro" class="shadow p-4 rounded">
+  <form id="formRegistro" class="card shadow p-4 mt-4">
 
         <div class="mb-3">
-            <label>Nombre</label>
+            <label class="form-label">Nombre</label>
             <input type="text" id="nombre" class="form-control">
             <small id="errorNombre" class="text-danger"></small>
         </div>
 
         <div class="mb-3">
-            <label>Descripción</label>
+            <label class="form-label">Descripción</label>
             <textarea id="descripcion" class="form-control"></textarea>
             <small id="errorDescripcion" class="text-danger"></small>
         </div>
 
         <div class="mb-3">
-            <label>Categoría</label>
+             <label class="form-label">Categoría</label>
 
             <select id="categoria" class="form-control">
                 <option value="">Seleccione...</option>
@@ -258,6 +258,33 @@ html
             </form>
 
         </section>
+        <!-- Mensaje de Alerta Bootstrap -->
+<div id="alertContainer" class="mt-3"></div>
+
+<!-- Contenedor para la Tabla / Registros con sistema de rejilla Bootstrap -->
+<div class="card shadow mt-4">
+    <div class="card-header bg-dark text-white fw-bold">
+        Registros Ingresados
+    </div>
+    <div class="card-body p-0">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+                <thead class="table-light">
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Categoría</th>
+                        <th class="text-end">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaCuerpo">
+                    <!-- Los datos se renderizan dinámicamente desde JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 <!-- Contenido dinámico -->
     </main>
 
@@ -289,6 +316,24 @@ html
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="script.js"></script>
+
+    <!-- Modal de Bootstrap para ver detalles -->
+<div class="modal fade" id="detallesModal" tabindex="-1" aria-labelledby="detallesModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title" id="detallesModalLabel">Detalle del Registro</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <!-- Contenido dinámico desde JS -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
