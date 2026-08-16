@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Productos - Desarrollo Web{% endblock %}
+
+{% block content %}
+
+<div class="text-center mb-4">
+    <h1>Productos</h1>
+    <p class="lead">Productos disponibles en nuestro sistema.</p>
+</div>
+
+<div class="row g-4">
+
+    <div class="col-md-4">
+        <div class="card shadow h-100">
+            <div class="card-body">
+                <h3 class="card-title">Producto 1</h3>
+                <p class="card-text">
+                    Producto de ejemplo para nuestro sistema.
+                </p>
+                <span class="badge bg-success">$25.00</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card shadow h-100">
+            <div class="card-body">
+                <h3 class="card-title">Producto 2</h3>
+                <p class="card-text">
+                    Segundo producto de demostración.
+                </p>
+                <span class="badge bg-success">$35.00</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card shadow h-100">
+            <div class="card-body">
+                <h3 class="card-title">Producto 3</h3>
+                <p class="card-text">
+                    Tercer producto de demostración.
+                </p>
+                <span class="badge bg-success">$45.00</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

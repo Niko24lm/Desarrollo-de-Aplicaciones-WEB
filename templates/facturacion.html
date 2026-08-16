@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}Facturación - Desarrollo Web{% endblock %}
+
+{% block content %}
+
+<div class="text-center mb-4">
+    <h1>Facturación</h1>
+    <p class="lead">Registro de facturas del sistema.</p>
+</div>
+
+<div class="table-responsive">
+
+    <table class="table table-bordered table-hover shadow">
+
+        <thead class="table-primary">
+            <tr>
+                <th>N.º Factura</th>
+                <th>Cliente</th>
+                <th>Fecha</th>
+                <th>Total</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td>001-001-000001</td>
+                <td>Juan Pérez</td>
+                <td>2026-07-15</td>
+                <td>$50.00</td>
+                <td>
+                    <span class="badge bg-success">Pagada</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>001-001-000002</td>
+                <td>María López</td>
+                <td>2026-07-16</td>
+                <td>$75.00</td>
+                <td>
+                    <span class="badge bg-warning text-dark">Pendiente</span>
+                </td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
+
+{% endblock %}

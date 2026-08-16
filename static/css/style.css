@@ -39,3 +39,19 @@ footer{
 
 }
 
+body {
+    background-color: #f4f6f9;
+}
+
+.card {
+    border: none;
+    border-radius: 12px;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+footer {
+    margin-top: 40px;
+}

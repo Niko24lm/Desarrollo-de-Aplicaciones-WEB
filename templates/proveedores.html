@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Proveedores - Desarrollo Web{% endblock %}
+
+{% block content %}
+
+<div class="text-center mb-4">
+    <h1>Proveedores</h1>
+    <p class="lead">Proveedores registrados en el sistema.</p>
+</div>
+
+<div class="row g-4">
+
+    <div class="col-md-4">
+        <div class="card shadow h-100">
+            <div class="card-body">
+                <h3>Proveedor 1</h3>
+                <p><strong>Empresa:</strong> Distribuidora Nacional</p>
+                <p><strong>Teléfono:</strong> 0991111111</p>
+                <span class="badge bg-success">Activo</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card shadow h-100">
+            <div class="card-body">
+                <h3>Proveedor 2</h3>
+                <p><strong>Empresa:</strong> Comercial Andina</p>
+                <p><strong>Teléfono:</strong> 0982222222</p>
+                <span class="badge bg-success">Activo</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card shadow h-100">
+            <div class="card-body">
+                <h3>Proveedor 3</h3>
+                <p><strong>Empresa:</strong> Importadora Ecuador</p>
+                <p><strong>Teléfono:</strong> 0973333333</p>
+                <span class="badge bg-warning text-dark">Pendiente</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
