@@ -1,52 +1,99 @@
 {% extends "base.html" %}
 
-{% block title %}Productos - Desarrollo Web{% endblock %}
+
+{% block title %}
+
+Productos
+
+{% endblock %}
+
+
 
 {% block content %}
 
-<div class="text-center mb-4">
-    <h1>Productos</h1>
-    <p class="lead">Productos disponibles en nuestro sistema.</p>
-</div>
+<h1 class="mb-4">
+
+    Productos
+
+</h1>
+
 
 <div class="row g-4">
 
-    <div class="col-md-4">
-        <div class="card shadow h-100">
+
+{% for producto in productos %}
+
+
+    <div class="col-md-6 col-lg-3">
+
+        <div class="card shadow-sm h-100">
+
             <div class="card-body">
-                <h3 class="card-title">Producto 1</h3>
-                <p class="card-text">
-                    Producto de ejemplo para nuestro sistema.
+
+                <h5 class="card-title">
+
+                    {{ producto.nombre }}
+
+                </h5>
+
+
+                <p class="text-muted">
+
+                    {{ producto.categoria }}
+
                 </p>
-                <span class="badge bg-success">$25.00</span>
+
+
+                <h5>
+
+                    ${{ "%.2f"|format(producto.precio) }}
+
+                </h5>
+
+
+                {% if producto.stock > 0 %}
+
+                    <span class="badge bg-success">
+
+                        Disponible
+
+                    </span>
+
+                    <p class="mt-2">
+
+                        Stock:
+                        {{ producto.stock }}
+
+                    </p>
+
+                {% else %}
+
+                    <span class="badge bg-danger">
+
+                        Agotado
+
+                    </span>
+
+                    <p class="mt-2">
+
+                        Sin unidades disponibles
+
+                    </p>
+
+                {% endif %}
+
+
             </div>
+
         </div>
+
     </div>
 
-    <div class="col-md-4">
-        <div class="card shadow h-100">
-            <div class="card-body">
-                <h3 class="card-title">Producto 2</h3>
-                <p class="card-text">
-                    Segundo producto de demostración.
-                </p>
-                <span class="badge bg-success">$35.00</span>
-            </div>
-        </div>
-    </div>
 
-    <div class="col-md-4">
-        <div class="card shadow h-100">
-            <div class="card-body">
-                <h3 class="card-title">Producto 3</h3>
-                <p class="card-text">
-                    Tercer producto de demostración.
-                </p>
-                <span class="badge bg-success">$45.00</span>
-            </div>
-        </div>
-    </div>
+{% endfor %}
+
 
 </div>
+
 
 {% endblock %}

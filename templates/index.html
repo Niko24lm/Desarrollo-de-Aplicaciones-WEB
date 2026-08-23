@@ -1,82 +1,87 @@
 {% extends "base.html" %}
 
-{% block title %}Inicio - Desarrollo Web{% endblock %}
+
+{% block title %}
+
+Inicio - Gestión Web
+
+{% endblock %}
+
+
 
 {% block content %}
 
-<div class="text-center mb-5">
 
-    <h1 class="display-4 fw-bold">
-        Desarrollo Web
+<div class="p-5 mb-4 bg-light rounded-4 shadow-sm">
+
+    <h1 class="display-5 fw-bold">
+
+        {{ mensaje }}
+
     </h1>
 
-    <h2 class="text-primary">
-        Sistema de gestión web
-    </h2>
-
     <p class="lead">
-        Bienvenido a nuestro proyecto de desarrollo de aplicaciones web.
+
+        Sistema desarrollado con
+        Python, Flask y Jinja2.
+
     </p>
 
 </div>
 
 
+
+<h2 class="mb-4">
+
+    Resumen del sistema
+
+</h2>
+
+
+
 <div class="row g-4">
 
-    <div class="col-md-6">
 
-        <div class="card shadow h-100">
-
-            <div class="card-body">
-
-                <h3 class="card-title">
-                    ¿Quiénes Somos?
-                </h3>
-
-                <p class="card-text">
-                    Somos un proyecto orientado al desarrollo de soluciones
-                    web modernas, organizadas y fáciles de utilizar.
-                    Nuestro objetivo es aplicar los conocimientos adquiridos
-                    en HTML5, CSS3, Bootstrap, JavaScript, Python y Flask
-                    para construir una aplicación web funcional.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
+    {% for nombre, cantidad in resumen.items() %}
 
 
-    <div class="col-md-6">
+    <div class="col-md-3">
 
-        <div class="card shadow h-100">
+        <div class="card shadow-sm h-100">
 
-            <div class="card-body">
+            <div class="card-body text-center">
 
-                <h3 class="card-title">
-                    Módulos del sistema
-                </h3>
+                <h5>
 
-                <ul class="list-group">
+                    {{ nombre|upper }}
 
-                    <li class="list-group-item">
-                        Productos
-                    </li>
+                </h5>
 
-                    <li class="list-group-item">
-                        Clientes
-                    </li>
 
-                    <li class="list-group-item">
-                        Proveedores
-                    </li>
+                <h2 class="text-primary">
 
-                    <li class="list-group-item">
-                        Facturación
-                    </li>
+                    {{ cantidad }}
 
-                </ul>
+                </h2>
+
+
+                {% if cantidad > 0 %}
+
+                    <span class="badge bg-success">
+
+                        Registros disponibles
+
+                    </span>
+
+                {% else %}
+
+                    <span class="badge bg-danger">
+
+                        Sin registros
+
+                    </span>
+
+                {% endif %}
 
             </div>
 
@@ -84,17 +89,11 @@
 
     </div>
 
+
+    {% endfor %}
+
+
 </div>
 
-
-<div class="alert alert-info text-center mt-5">
-
-    <strong>Proyecto Integrador U3</strong>
-
-    <br>
-
-    Aplicación web desarrollada con Python y Flask.
-
-</div>
 
 {% endblock %}

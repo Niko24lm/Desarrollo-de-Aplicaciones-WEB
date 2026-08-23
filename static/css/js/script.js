@@ -185,3 +185,4 @@ document.getElementById("categoria").addEventListener("change", validarCategoria
 
 });
 mostrarServicios();
+console.log("JavaScript cargado correctamente");

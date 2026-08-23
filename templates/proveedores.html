@@ -1,49 +1,72 @@
 {% extends "base.html" %}
 
-{% block title %}Proveedores - Desarrollo Web{% endblock %}
+
+{% block title %}
+
+Proveedores
+
+{% endblock %}
+
+
 
 {% block content %}
 
-<div class="text-center mb-4">
-    <h1>Proveedores</h1>
-    <p class="lead">Proveedores registrados en el sistema.</p>
-</div>
+<h1 class="mb-4">
+
+    Proveedores
+
+</h1>
+
 
 <div class="row g-4">
 
-    <div class="col-md-4">
-        <div class="card shadow h-100">
-            <div class="card-body">
-                <h3>Proveedor 1</h3>
-                <p><strong>Empresa:</strong> Distribuidora Nacional</p>
-                <p><strong>Teléfono:</strong> 0991111111</p>
-                <span class="badge bg-success">Activo</span>
-            </div>
+
+{% for proveedor in proveedores %}
+
+
+<div class="col-md-6">
+
+
+    <div class="card shadow-sm">
+
+        <div class="card-body">
+
+            <h5>
+
+                {{ proveedor.empresa }}
+
+            </h5>
+
+
+            <p>
+
+                <strong>Contacto:</strong>
+
+                {{ proveedor.contacto }}
+
+            </p>
+
+
+            <p>
+
+                <strong>Teléfono:</strong>
+
+                {{ proveedor.telefono }}
+
+            </p>
+
         </div>
+
     </div>
 
-    <div class="col-md-4">
-        <div class="card shadow h-100">
-            <div class="card-body">
-                <h3>Proveedor 2</h3>
-                <p><strong>Empresa:</strong> Comercial Andina</p>
-                <p><strong>Teléfono:</strong> 0982222222</p>
-                <span class="badge bg-success">Activo</span>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-4">
-        <div class="card shadow h-100">
-            <div class="card-body">
-                <h3>Proveedor 3</h3>
-                <p><strong>Empresa:</strong> Importadora Ecuador</p>
-                <p><strong>Teléfono:</strong> 0973333333</p>
-                <span class="badge bg-warning text-dark">Pendiente</span>
-            </div>
-        </div>
-    </div>
 
 </div>
+
+
+{% endfor %}
+
+
+</div>
+
 
 {% endblock %}

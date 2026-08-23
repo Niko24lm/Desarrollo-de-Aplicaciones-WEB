@@ -1,54 +1,119 @@
 {% extends "base.html" %}
 
-{% block title %}Facturación - Desarrollo Web{% endblock %}
+
+{% block title %}
+
+Facturación
+
+{% endblock %}
+
+
 
 {% block content %}
 
-<div class="text-center mb-4">
-    <h1>Facturación</h1>
-    <p class="lead">Registro de facturas del sistema.</p>
-</div>
+<h1 class="mb-4">
+
+    Facturación
+
+</h1>
+
 
 <div class="table-responsive">
 
-    <table class="table table-bordered table-hover shadow">
+<table class="table table-bordered">
 
-        <thead class="table-primary">
-            <tr>
-                <th>N.º Factura</th>
-                <th>Cliente</th>
-                <th>Fecha</th>
-                <th>Total</th>
-                <th>Estado</th>
-            </tr>
-        </thead>
 
-        <tbody>
+<thead class="table-primary">
 
-            <tr>
-                <td>001-001-000001</td>
-                <td>Juan Pérez</td>
-                <td>2026-07-15</td>
-                <td>$50.00</td>
-                <td>
-                    <span class="badge bg-success">Pagada</span>
-                </td>
-            </tr>
+<tr>
 
-            <tr>
-                <td>001-001-000002</td>
-                <td>María López</td>
-                <td>2026-07-16</td>
-                <td>$75.00</td>
-                <td>
-                    <span class="badge bg-warning text-dark">Pendiente</span>
-                </td>
-            </tr>
+    <th>Número</th>
 
-        </tbody>
+    <th>Cliente</th>
 
-    </table>
+    <th>Total</th>
+
+    <th>Estado</th>
+
+</tr>
+
+</thead>
+
+
+<tbody>
+
+
+{% for factura in facturas %}
+
+
+<tr>
+
+    <td>
+
+        {{ factura.numero }}
+
+    </td>
+
+
+    <td>
+
+        {{ factura.cliente }}
+
+    </td>
+
+
+    <td>
+
+        ${{ "%.2f"|format(factura.total) }}
+
+    </td>
+
+
+    <td>
+
+
+        {% if factura.estado == "Pagada" %}
+
+            <span class="badge bg-success">
+
+                Pagada
+
+            </span>
+
+
+        {% elif factura.estado == "Pendiente" %}
+
+            <span class="badge bg-warning text-dark">
+
+                Pendiente
+
+            </span>
+
+
+        {% else %}
+
+            <span class="badge bg-danger">
+
+                Anulada
+
+            </span>
+
+        {% endif %}
+
+
+    </td>
+
+</tr>
+
+
+{% endfor %}
+
+
+</tbody>
+
+</table>
 
 </div>
+
 
 {% endblock %}
