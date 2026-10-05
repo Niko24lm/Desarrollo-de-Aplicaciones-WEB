@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}
+Modificar Producto
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <h1 class="mb-4">Modificar Producto</h1>
+
+    <form method="POST">
+
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+
+            <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                class="form-control"
+                value="{{ producto.nombre }}"
+                required>
+        </div>
+
+        <div class="mb-3">
+            <label for="precio" class="form-label">Precio</label>
+
+            <input
+                type="number"
+                id="precio"
+                name="precio"
+                class="form-control"
+                step="0.01"
+                min="0"
+                value="{{ producto.precio }}"
+                required>
+        </div>
+
+        <div class="mb-3">
+            <label for="stock" class="form-label">Stock</label>
+
+            <input
+                type="number"
+                id="stock"
+                name="stock"
+                class="form-control"
+                min="0"
+                value="{{ producto.stock }}"
+                required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+            Guardar cambios
+        </button>
+
+        <a
+            href="{{ url_for('pagina_productos') }}"
+            class="btn btn-secondary">
+            Cancelar
+        </a>
+
+    </form>
+
+</div>
+
+{% endblock %}
